@@ -50,5 +50,16 @@ public class CanvasUtils {
 		}
 
 	}
+	
+	public static void instructions() {
+
+		System.out.print("C w h - Should create a new canvas of width w and height h.\r\n\n" + "L x1 y1 x2 y2 - "
+				+ "Should create a new line from (x1,y1) to (x2,y2) . Currently only\r\n"
+				+ "horizontal or vertical lines are supported. Horizontal and vertical lines will be\r\n"
+				+ "drawn using the x character.\r\n\n" + "R x1 y1 x2 y2 - "
+				+ "Should create a new rectangle, whose upper left corner is (x1,y1) and\r\n"
+				+ "lower right corner is (x2,y2) . Horizontal and vertical lines will be drawn\r\n"
+				+ "using the x character.\r\n\n" + "Q - Should quit the program.\r\n\n");
+	}
 
 }
