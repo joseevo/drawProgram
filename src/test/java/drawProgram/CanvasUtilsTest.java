@@ -1,14 +1,27 @@
 package drawProgram;
 
-import static org.junit.Assert.*;
-
+import org.junit.Assert;
 import org.junit.Test;
 
 public class CanvasUtilsTest {
 
+
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testNoCanvas1() {
+		char[][] arr = null;
+		Throwable exception = Assert.assertThrows(Exception.class, () -> {
+			CanvasUtils.readInput(arr);
+		});
+		Assert.assertEquals("Please insert a valid input separated by [space]", exception.getMessage());
+	}
+
+	@Test
+	public void testNoCanvas2() {
+		char[][] arr = null;
+		Throwable exception = Assert.assertThrows(Exception.class, () -> {
+			CanvasUtils.display(arr);
+		});
+		Assert.assertEquals("Please insert a valid input separated by [space]", exception.getMessage());
 	}
 
 }
