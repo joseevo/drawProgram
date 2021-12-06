@@ -67,20 +67,21 @@ public class Line extends Geometry {
 
 	@Override
 	public char[][] drawX(char[][] arr) {
-		char point = 'X';
+		char point = 'x';
 
-		for (int i = y1; i <= y2; i++) {
-			arr[x1][i] = point;
+		for (int i = x1; i <= x2; i++) {
+			arr[y1][i] = point;
 		}
 		return arr;
 	}
 
 	@Override
 	public char[][] drawY(char[][] arr) {
-		char point = 'X';
+		char point = 'x';
 
-		for (int i = x1; i <= x2; i++) {
-			arr[i][y1] = point;
+		for (int i = y1; i <= y2; i++) {
+			arr[i][x1] = point;
+
 		}
 
 		return arr;

@@ -27,8 +27,8 @@ public class Canvas extends Geometry {
 		try {
 
 			// declares the variables with the width and height
-			lines = Integer.parseInt(input[1]);
-			columns = Integer.parseInt(input[2]);
+			columns = Integer.parseInt(input[1]);
+			lines = Integer.parseInt(input[2]);
 
 		} catch (NumberFormatException ex) {
 
@@ -56,7 +56,7 @@ public class Canvas extends Geometry {
 	}
 
 	@Override
-	public char[][] drawX(char[][] arr) {
+	public char[][] drawY(char[][] arr) {
 		char point = '|';
 
 		for (int i = 0; i < lines; i++) {
@@ -69,7 +69,7 @@ public class Canvas extends Geometry {
 	}
 
 	@Override
-	public char[][] drawY(char[][] arr) {
+	public char[][] drawX(char[][] arr) {
 		char point = '-';
 
 		for (int i = 0; i < columns; i++) {
@@ -93,8 +93,8 @@ public class Canvas extends Geometry {
 
 		checkInput(input);
 
-		arr = drawX(arr);
 		arr = drawY(arr);
+		arr = drawX(arr);
 
 		return arr;
 	}

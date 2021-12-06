@@ -6,23 +6,10 @@ public class CanvasUtils {
 
 	private static Scanner scanner = new Scanner(System.in);
 
-	public static char[][] readInput(char[][] arr) {
-		String[] input;
-
-		try {
-			// reads the user's input and splits it into an array
-			input = scanner.nextLine().split(" ");
-		} catch (Exception ex) {
-			throw new IllegalArgumentException("Please insert a valid input separated by [space]");
-		}
-
-		if (input[0].isEmpty() || input.length == 0) {
-			throw new IllegalArgumentException("Please insert a valid input separated by [space]");
-		}
+	public static char[][] readInput(char[][] arr, String[] input) {
 		arr = InputReader.action(input, arr).draw(input);
 
 		return arr;
-
 	}
 
 	// displays the content of the array
@@ -39,15 +26,22 @@ public class CanvasUtils {
 			throw new IllegalArgumentException("Please insert a valid input separated by [space]");
 		}
 		
-		
+		String forTest="";
 
 		for (int i = 0; i < lines; i++) {
 			for (int j = 0; j < columns; j++) {
-				System.out.print(arr[i][j]);
+				//System.out.print(arr[i][j]== 0 ? " ": arr[i][j]);
+				
+				forTest+=arr[i][j]== 0 ? " ": arr[i][j];
 			}
+			
 
-			System.out.println();
+			//System.out.print("\n");
+			
+			forTest+="\r\n";
 		}
+		
+		System.out.print(forTest);
 
 	}
 	
@@ -61,5 +55,16 @@ public class CanvasUtils {
 				+ "lower right corner is (x2,y2) . Horizontal and vertical lines will be drawn\r\n"
 				+ "using the x character.\r\n\n" + "Q - Should quit the program.\r\n\n");
 	}
+	
+	public static String[] getInput(String line) {
+        String[] input;
+        try {
+            // reads the user's input and splits it into an array
+            input = line.split(" ");
+        } catch (Exception ex) {
+            throw new IllegalArgumentException("Please insert a valid input separated by [space]");
+        }
+        return input;
+    }
 
 }

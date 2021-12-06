@@ -20,12 +20,7 @@ public class InputReader {
 				
 			case 'R':
 				return new Rectangle(arr);
-				
-			case 'Q':
-				System.out.println("Exit");
-				System.exit(0);
-
-				
+							
 			default:
 				
 				throw new IllegalArgumentException ("Please insert a valid action ([C] - New Canvas, [L] - New Line, [R] - New Rectangle, [Q] - Quit");

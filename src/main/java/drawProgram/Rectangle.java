@@ -70,7 +70,7 @@ public class Rectangle extends Geometry {
 
 	@Override
 	public char[][] drawX(char[][] arr) {
-		char point = 'X';
+		char point = 'x';
 
 		for (int i = x1; i <= x2; i++) {
 
@@ -84,7 +84,7 @@ public class Rectangle extends Geometry {
 
 	@Override
 	public char[][] drawY(char[][] arr) {
-		char point = 'X';
+		char point = 'x';
 
 		for (int i = y1; i <= y2; i++) {
 
