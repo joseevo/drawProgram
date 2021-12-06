@@ -25,21 +25,15 @@ public class CanvasUtils {
 			throw new IllegalArgumentException("Please insert a valid input separated by [space]");
 		}
 
-		String forTest = "";
-
 		for (int i = 0; i < lines; i++) {
 			for (int j = 0; j < columns; j++) {
-				//System.out.print(arr[i][j]== 0 ? " ": arr[i][j]);
+				System.out.print(arr[i][j]== 0 ? " ": arr[i][j]);
 
-				forTest += arr[i][j] == 0 ? " " : arr[i][j];
 			}
 
-			// System.out.print("\n");
+			System.out.print("\r\n");
 
-			forTest += "\r\n";
 		}
-
-		System.out.print(forTest);
 
 	}
 
