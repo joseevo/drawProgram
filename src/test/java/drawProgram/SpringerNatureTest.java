@@ -78,6 +78,20 @@ public class SpringerNatureTest {
         assertThat(ioCapturer.output(), containsString(expectedOutput));
     }
     
+    @Test
+    public void drawsRectangle3() {
+        ioCapturer.setInputLines("C 20 4", "R 1 4 4 2", "Q");
+        Main.main(new String[]{});
+        String expectedOutput =
+                "----------------------" + lineSeparator +
+                "|                    |" + lineSeparator +
+                "|xxxx                |" + lineSeparator +
+                "|x  x                |" + lineSeparator +
+                "|xxxx                |" + lineSeparator +
+                "----------------------";
+        assertThat(ioCapturer.output(), containsString(expectedOutput));
+    }
+    
     
 }
 
