@@ -1,10 +1,10 @@
 package drawProgram;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class CanvasUtils {
 
-	private static Scanner scanner = new Scanner(System.in);
+	//private static Scanner scanner = new Scanner(System.in);
 
 	public static char[][] readInput(char[][] arr, String[] input) {
 		arr = InputReader.action(input, arr).draw(input);
@@ -14,37 +14,35 @@ public class CanvasUtils {
 
 	// displays the content of the array
 	public static void display(char[][] arr) {
-		
+
 		int lines;
 		int columns;
-		
+
 		try {
-		lines = arr.length;
-		columns = arr[1].length;
-		}
-		catch(Exception ex) {
+			lines = arr.length;
+			columns = arr[1].length;
+		} catch (Exception ex) {
 			throw new IllegalArgumentException("Please insert a valid input separated by [space]");
 		}
-		
-		String forTest="";
+
+		String forTest = "";
 
 		for (int i = 0; i < lines; i++) {
 			for (int j = 0; j < columns; j++) {
 				//System.out.print(arr[i][j]== 0 ? " ": arr[i][j]);
-				
-				forTest+=arr[i][j]== 0 ? " ": arr[i][j];
-			}
-			
 
-			//System.out.print("\n");
-			
-			forTest+="\r\n";
+				forTest += arr[i][j] == 0 ? " " : arr[i][j];
+			}
+
+			// System.out.print("\n");
+
+			forTest += "\r\n";
 		}
-		
+
 		System.out.print(forTest);
 
 	}
-	
+
 	public static void instructions() {
 
 		System.out.print("C w h - Should create a new canvas of width w and height h.\r\n\n" + "L x1 y1 x2 y2 - "
@@ -55,16 +53,16 @@ public class CanvasUtils {
 				+ "lower right corner is (x2,y2) . Horizontal and vertical lines will be drawn\r\n"
 				+ "using the x character.\r\n\n" + "Q - Should quit the program.\r\n\n");
 	}
-	
+
 	public static String[] getInput(String line) {
-        String[] input;
-        try {
-            // reads the user's input and splits it into an array
-            input = line.split(" ");
-        } catch (Exception ex) {
-            throw new IllegalArgumentException("Please insert a valid input separated by [space]");
-        }
-        return input;
-    }
+		String[] input;
+		try {
+			// reads the user's input and splits it into an array
+			input = line.split(" ");
+		} catch (Exception ex) {
+			throw new IllegalArgumentException("Please insert a valid input separated by [space]");
+		}
+		return input;
+	}
 
 }

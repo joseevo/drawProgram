@@ -1,7 +1,5 @@
 package drawProgram;
 
-import static drawProgram.CanvasUtils.getInput;
-
 import java.util.Scanner;
 
 public class Main {
@@ -11,10 +9,10 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		char[][] arr = null;
 
-		//CanvasUtils.instructions();
-		//System.out.println("Enter command:");
+		CanvasUtils.instructions();
+		System.out.println("Enter command:");
 
-		String input [] = getInput(scanner.nextLine());
+		String input [] = CanvasUtils.getInput(scanner.nextLine());
 		String firstInLine = input[0];
 
 		while (!firstInLine.toUpperCase().equals("Q")) {
@@ -26,8 +24,8 @@ public class Main {
 				System.out.println(ex);
 			}
 
-			//System.out.println("Enter command:");
-			input = getInput(scanner.nextLine());
+			System.out.println("Enter command:");
+			input = CanvasUtils.getInput(scanner.nextLine());
 			firstInLine = input[0];
 
 		}
