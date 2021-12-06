@@ -74,8 +74,8 @@ public class Rectangle extends Geometry {
 
 		for (int i = x1; i <= x2; i++) {
 
-			arr[i][y1] = point;
-			arr[i][y2] = point;
+			arr[y1][i] = point;
+			arr[y2][i] = point;
 		}
 
 		return arr;
@@ -88,8 +88,8 @@ public class Rectangle extends Geometry {
 
 		for (int i = y1; i <= y2; i++) {
 
-			arr[x1][i] = point;
-			arr[x2][i] = point;
+			arr[i][x1] = point;
+			arr[i][x2] = point;
 		}
 
 		return arr;
