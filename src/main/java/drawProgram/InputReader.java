@@ -13,7 +13,7 @@ public class InputReader {
 			switch (Character.toUpperCase(input[0].charAt(0))) {
 				
 			case 'C':
-				return new Canvas();
+				return new Canvas(arr);
 				
 			case 'L':
 				return new Line(arr);

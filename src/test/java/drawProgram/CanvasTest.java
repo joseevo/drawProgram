@@ -7,10 +7,12 @@ import org.junit.Test;
 public class CanvasTest {
 
 private Canvas canvas;
+private char[][] arr;
 	
 	@Before
 	public void initialization(){
-		canvas = new Canvas();
+		
+		canvas = new Canvas(arr);
 	}
 	
 		

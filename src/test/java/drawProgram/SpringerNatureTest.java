@@ -92,6 +92,32 @@ public class SpringerNatureTest {
         assertThat(ioCapturer.output(), containsString(expectedOutput));
     }
     
+    @Test
+    public void emptyCanvas() {
+        ioCapturer.setInputLines("C 20 4", "L 1 2 1 4", "C", "Q");
+        Main.main(new String[]{});
+        String expectedOutput =
+        		
+        		"----------------------" + lineSeparator +
+        		"|                    |" + lineSeparator +
+        		"|x                   |" + lineSeparator +
+        		"|x                   |" + lineSeparator +
+        		"|x                   |" + lineSeparator +
+        		"----------------------" + lineSeparator +
+        		"Enter command:"+ lineSeparator +
+                "----------------------" + lineSeparator +
+                "|                    |" + lineSeparator +
+                "|                    |" + lineSeparator +
+                "|                    |" + lineSeparator +
+                "|                    |" + lineSeparator +
+                "----------------------"+ lineSeparator +
+        		"Enter command:"+ lineSeparator;
+
+        assertThat(ioCapturer.output(), containsString(expectedOutput));
+    }
+    
+    
+    
     
 }
 

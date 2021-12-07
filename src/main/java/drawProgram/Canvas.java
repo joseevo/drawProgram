@@ -1,13 +1,23 @@
 package drawProgram;
 
 public class Canvas extends Geometry {
+	
+	private char[][] arr;
+	
+	public Canvas(char[][]arr) {
+		
+		if(arr!=null) {			
+			this.arr=arr;	
+		}
+	}
 
 	// maximum size of the number of columns or lines inserted (to prevent an
 	// OutOfMemoryError)
 	private static final int arrayMaxSize = 4000;
 
 	// number of instructions that should be received by the user
-	private int inputSize = 3;
+	private int normalSize = 3;
+	private int cleanSize = 1;
 
 	// global width and height variables
 	private int lines;
@@ -18,9 +28,15 @@ public class Canvas extends Geometry {
 	@Override
 	public void checkInput(String[] input) {
 		// validates if the input has size 3 (command, width and height)
-		if (input.length != inputSize) {
-
+		if (input.length == cleanSize) {
+			
+			input = new String[] {"C",String.valueOf(arr[1].length-2),String.valueOf(arr.length-2)};
+			
+		}
+		if (input.length != normalSize) {
+			
 			throw new IllegalArgumentException("please insert a command, width and height value separated by [space]");
+			
 		}
 
 		// validates if the width and height passed are integer numbers
@@ -88,10 +104,8 @@ public class Canvas extends Geometry {
 
 		// creates an multi index array with the size inserted by the user (+ the canvas
 		// frame)
-
+		
 		char[][] arr = new char[lines][columns];
-
-		checkInput(input);
 
 		arr = drawY(arr);
 		arr = drawX(arr);

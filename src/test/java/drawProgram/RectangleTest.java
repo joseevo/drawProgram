@@ -4,8 +4,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class RectangleTest {
-
-	private Canvas canvas = new Canvas();
+	
+	private char[][] arr1;
+	private Canvas canvas = new Canvas(arr1);
 	private String[] inputCanvas = new String[] { "C", "20", "60" };
 	private char[][] arr = canvas.draw(inputCanvas);
 	private Rectangle rectangle = new Rectangle(arr);

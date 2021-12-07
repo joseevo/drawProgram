@@ -65,20 +65,18 @@ public class Rectangle extends Geometry {
 			throw new IllegalArgumentException(
 					"Please insert different horizontal and vertical coordinates to create a rectangle");
 		}
-		
-		if(x1>x2) {
-			int xTemp=x2;
-			x2=x1;
-			x1=xTemp;
+
+		if (x1 > x2) {
+			int xTemp = x2;
+			x2 = x1;
+			x1 = xTemp;
 		}
-		
-		if(y1>y2) {
-			int xTemp=y2;
-			y2=y1;
-			y1=xTemp;
+
+		if (y1 > y2) {
+			int xTemp = y2;
+			y2 = y1;
+			y1 = xTemp;
 		}
-		
-		
 
 	}
 

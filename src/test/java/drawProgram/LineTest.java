@@ -4,8 +4,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class LineTest {
-
-	private Canvas canvas = new Canvas();
+	
+	private char[][] arr1;
+	private Canvas canvas = new Canvas(arr1);
 	private String[] inputCanvas = new String[] { "C", "4", "40" };
 	private char[][] arr = canvas.draw(inputCanvas);
 	private Line line = new Line(arr);
